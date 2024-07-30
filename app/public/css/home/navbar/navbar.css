@@ -1,0 +1,75 @@
+.nav-bar-one{
+    height: 30px;
+    background-color: brown;
+
+}
+
+header, nav{
+    width: 100%;
+}
+
+.Container_Content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 190px;
+}
+
+.Container_Panel{
+    width: 99%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
+    background-color: rgb(115, 115, 119);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  
+}
+
+.panel-second{
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.panel-content-real{
+    height: 80px;
+}
+
+.pattern-info{
+    font-size: 13px;
+    height: 20px;
+}
+.legend-m{
+    font-size: 15px;
+    text-align: center;
+    height: 15px;
+    margin-bottom: 10px;
+}
+.pattern-panel-info-container{
+    width: 50%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-pattern-panel{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.arrows-up{
+    color: greenyellow;
+    font-size: 20px;
+}
+.arrows-down{
+    color: red;
+    font-size: 20px;
+}
