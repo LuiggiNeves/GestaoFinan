@@ -2,63 +2,75 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 50px;
-    background-color: #333;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    background-color: #33333300;
+    display: flex;
+    justify-content: center;
     color: white;
     text-align: center;
     padding: 10px;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-.nav-content-menu {
-    width: 100%;
-    height: 100%;
+.button-container {
+    display: flex;
+    background-color: rgba(245, 73, 144);
+    width: 250px;
+    height: 45px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
 }
 
-.Content-menu-ul ul {
-    height: 100%;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 35px;
+.button:hover {
+    transform: translateY(-5px);
 }
 
-.Content-menu-ul ul li {
-    margin-left: 30px;
-    margin-right: 30px;
-    height: 100%;
-    display: flex;
-    align-items: center; /* Alinha o conteúdo verticalmente */
+.button i {
+    font-size: 25px;
 }
 
-.li-item-center {
-    height: 100%;
-    display: flex;
-    align-items: center; /* Alinha verticalmente o conteúdo */
-    justify-content: center; /* Alinha horizontalmente o conteúdo */
+.square-menu {
+    display: none;
+    position: absolute;
+    bottom: 70px; /* 10px acima do botão */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 300px;
+    height: 100px;
+    background-color: #555;
+    border-radius: 5px;
+    z-index: 1001;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.Item-Center {
-    width: 60px; /* Aumenta a largura */
-    height: 60px; /* Aumenta a altura */
-    transform: translateY(-10px); /* Eleva o item central em 10px */
-    background-color: #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center; /* Alinha verticalmente o ícone dentro do círculo */
-    justify-content: center; /* Alinha horizontalmente o ícone dentro do círculo */
+.square-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
-.li-pattern {
-    width: 50px;
-    height: 30px;
+.container-btn-menu {
+    width: 100%;
     display: flex;
-    align-items: center; /* Alinha verticalmente o ícone */
-    justify-content: center; /* Alinha horizontalmente o ícone */
+    flex-direction: column;
 }
