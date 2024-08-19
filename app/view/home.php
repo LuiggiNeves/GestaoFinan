@@ -8,22 +8,24 @@
     </header>
 
     <main>
-
-        <div class="container_main">
-            <div class="content-main">
-                <div class="contas-grafico">
+        <div id="container_main">
+            <div id="content-main">
+                <div id="container-desp-cat">
                     <div>
-                        <h4>Grafico Contas</h4>
+                        <p>Despesas por categoria</p>
                     </div>
-                    <div class="grafic-contas">
-                        <div class="grafic-content">
-                            <canvas id="myDoughnutChart"></canvas>
+
+                    <div id="container_graphic_desp_cat">
+                        <div id="graphic_desp_cat">
+                            <canvas id="myPieChart"></canvas>
                         </div>
-                        <div class="legend-content" id="chartLegend">
-                            <!-- Legends will be dynamically inserted here -->
+
+                        <div id="legend-desp-cat">
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

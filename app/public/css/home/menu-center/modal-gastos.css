@@ -1,0 +1,98 @@
+
+
+.modal-dialog{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.modal-content{
+    width: 90%;
+    height: 250px;
+
+}
+
+.modal-content-container-g{
+    width: 100%;
+}
+
+
+
+.input-valor-modal {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-valor-modal-cat{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categoria-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.categoria-input i{
+    background-color: #e9e9e9;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    border-right: none;
+    color: var(--color-text-components);
+}
+
+.categoria-input input{
+    width: 50%;
+    height: 30px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+}
+
+.container-drop-cat{
+    min-width: 100%!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.cat-drop{
+    width: 100%;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-drop-op{
+    width: 59%;
+    background-color: rgb(168, 168, 168);
+
+}
+
+.cat-drop option{
+
+}

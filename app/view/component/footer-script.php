@@ -4,7 +4,13 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<!--Script mapa-->
+
+
+
 
 <script src="../public/js/page/config/limit-view.js"></script>
 <script src="../public/js/page/graphics/contas-categ.js"></script>
 <script src="../public/js/page/menus/menu-bottom-fixed.js"></script>
+<script src="../public/js/page/modals/orcamento.js"></script>
+<script src="../public/js/page/maps/mapa.js"></script>

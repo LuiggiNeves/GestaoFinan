@@ -1,43 +1,53 @@
-var ctx = document.getElementById('myDoughnutChart').getContext('2d');
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Category A', 'Category B', 'Category C', 'Category D', 'Category E', 'Category F'],
-        datasets: [{
-            data: [20, 15, 25, 10, 20, 10],
-            backgroundColor: ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#c2c2f0', '#ffb3e6'],
-        }]
-    },
+const ctx = document.getElementById('myPieChart').getContext('2d');
+const data = {
+    labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4'],
+    datasets: [{
+        label: 'Despesas',
+        data: [10, 20, 30, 40],
+        backgroundColor: [
+            'rgba(255, 99, 132)',
+            'rgba(54, 162, 235)',
+            'rgba(255, 206, 86)',
+            'rgba(75, 192, 192)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+        ],
+        borderWidth: 1,
+        hoverOffset: 4,
+        cutout: '50%'  // Isso cria a abertura no meio
+    }]
+};
+
+const config = {
+    type: 'doughnut', // Tipo de gráfico para criar uma abertura no meio
+    data: data,
     options: {
         responsive: true,
         plugins: {
             legend: {
-                display: false, // Disable the default legend
-            },
-            tooltip: {
-                enabled: true,
+                display: false, // Esconde a legenda padrão
             }
         }
-    }
-});
+    },
+    plugins: [{
+        id: 'customLegend',
+        afterUpdate: function (chart) {
+            const legendContainer = document.getElementById('legend-desp-cat');
+            const items = chart.options.plugins.legend.labels.generateLabels(chart);
+            let legendHTML = '';
+            items.forEach(item => {
+                legendHTML += `<div class="legend-item">
+                    <span class="legend-color" style="background-color:${item.fillStyle};"></span>
+                    ${item.text}
+                </div>`;
+            });
+            legendContainer.innerHTML = legendHTML;
+        }
+    }]
+};
 
-// Generate custom legend
-var chartLegend = document.getElementById('chartLegend');
-var labels = myDoughnutChart.data.labels;
-var bgColor = myDoughnutChart.data.datasets[0].backgroundColor;
-
-labels.forEach((label, index) => {
-    var legendItem = document.createElement('div');
-    legendItem.classList.add('legend-item');
-
-    var colorBox = document.createElement('span');
-    colorBox.classList.add('legend-color-box');
-    colorBox.style.backgroundColor = bgColor[index];
-
-    var text = document.createElement('span');
-    text.innerText = label;
-
-    legendItem.appendChild(colorBox);
-    legendItem.appendChild(text);
-    chartLegend.appendChild(legendItem);
-});
+const myPieChart = new Chart(ctx, config);

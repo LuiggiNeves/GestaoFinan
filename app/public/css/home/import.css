@@ -1,3 +1,6 @@
 @import 'navbar/navbar.css';
 @import 'menu-fixed/menu-fixed.css';
-@import 'menu-center/m-center.css'
+@import 'menu-center/m-center.css';
+@import 'menu-center/modal-gastos.css';
+@import 'modal/menu-bottom.css';
+@import 'modal/outros/orcamento.css';

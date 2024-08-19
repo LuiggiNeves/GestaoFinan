@@ -1,7 +1,9 @@
+
+<!--Menu bottom conteudo-->
 <div class="Menu_Fixed_Bottom_Container">
     <div class="button-container">
         <button class="button">
-            <i class="bi bi-bookmarks"></i>
+            <i class="bi bi-bookmarks" id="bookmarksButton"></i>
         </button>
         <button class="button">
             <i class="bi bi-plus-circle" id="menuButton"></i>
@@ -14,56 +16,47 @@
 
 
 
-<div class="square-menu" id="squareMenu">
-    <div class="container-btn-menu">
-        <input type="button" value="Recebimento" data-toggle="modal" data-target="#recebimentoModal">
-        <input type="button" value="Gasto" data-toggle="modal" data-target="#gastoModal">
-    </div>
-</div>
+
+<?php include 'modal/outros/orcamento.php' ?>
+<?php include 'modal/menu-bottom.php'?>
+<!--Input personalizado-->
 
 
+<script>
+    function toggleDropdown() {
+        document.getElementById("dropdown").style.display = "block";
+    }
 
-<!-- Modal Recebimento -->
-<div class="modal fade" id="recebimentoModal" tabindex="-1" aria-labelledby="recebimentoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="recebimentoModalLabel">Recebimento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Informe o valor do recebimento:</p>
-                <input type="text" class="form-control" placeholder="Valor">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-            </div>
-        </div>
-    </div>
-</div>
+    function selectOption(value) {
+        document.getElementById("browser").value = value;
+        document.getElementById("dropdown").style.display = "none";
+    }
 
-<!-- Modal Gasto -->
-<div class="modal fade" id="gastoModal" tabindex="-1" aria-labelledby="gastoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div>
-                <div>
-                    <h5>Valor Gasto</h5>
-                </div>
+    function filterFunction() {
+        const input = document.getElementById('browser');
+        const filter = input.value.toLowerCase();
+        const options = document.querySelectorAll('#dropdown option');
+        let anyVisible = false;
 
-                <div class="d-flex">
-                    <div>
-                        <label for="bruto">Total</label>
-                        <input type="number" name="bruto" id="">
-                    </div>
+        options.forEach(option => {
+            if (option.innerText.toLowerCase().indexOf(filter) > -1) {
+                option.style.display = "";
+                anyVisible = true;
+            } else {
+                option.style.display = "none";
+            }
+        });
 
-                </div>
-                <div>
-                    <input type="button" value="OK">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        if (!anyVisible) {
+            document.getElementById("dropdown").style.display = "none";
+        } else {
+            document.getElementById("dropdown").style.display = "block";
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.input-categoria')) {
+            document.getElementById("dropdown").style.display = "none";
+        }
+    });
+</script>

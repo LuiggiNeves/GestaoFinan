@@ -1,75 +1,211 @@
-.nav-bar-one{
-    height: 30px;
-    background-color: brown;
-
-}
-
-header, nav{
+nav{
     width: 100%;
+
+ 
+    font-size: var(--font-size-normal);
+
+}
+.container-div-menu{
+    background-color: #fff;
+    padding-bottom: 20px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
-.Container_Content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 190px;
-}
-
-.Container_Panel{
-    width: 99%;
+#container_content_navbar{
+    
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 30px;
-    background-color: rgb(115, 115, 119);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  
 }
 
-.panel-second{
-    margin-top: 20px;
+#container_primary_menu{
     width: 100%;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#container_second_menu{
+    width: 100%;
+    min-height: 100%;
+
+
+}
+
+#container_date_select_input{
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 10px;
+
+}
+
+#container_value_all_center{
+    width: 100%;
+
+    font-size: 30px;
+
+}
+
+#content-value-all-center{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#container_cube_values{
+    width: 100%;
+    height: 80px;
+
+}
+
+#content_cube_values{
+    width: 100%;
+    height: 100%;
+
+
+
+
+    display: flex;
+
+
+    align-items: center;
     justify-content: space-around;
 }
 
-.panel-content-real{
-    height: 80px;
+
+
+/*Components*/
+
+.content-user{
+    color: black;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
 }
 
-.pattern-info{
-    font-size: 13px;
+.bi-person-circle{
+    margin-right:5px;
+    margin-left: 5px;
+}
+
+.content-btn-reflash{
+    width: 20px;
     height: 20px;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 5px;
 }
-.legend-m{
-    font-size: 15px;
+
+.select-select-date{
     text-align: center;
-    height: 15px;
-    margin-bottom: 10px;
 }
-.pattern-panel-info-container{
-    width: 50%;
-    height: 40px;
+
+.select-select-date select{
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* Standard syntax */
+}
+
+
+
+.content-arrow-select{
+    font-size: 15px;
+}
+
+
+.content-arrow-left{
+    margin-right: 10px;
+}
+
+
+.content-arrow-right{
+    margin-left: 10px;
+}
+
+.s-left{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.v-center{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+    margin-top: auto;
+
+}
+
+#info-valor{
+    font-size: 15px;
+    background-color: #ffffff71;
+}
+
+.e-right{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.cube-generic{
+    width: 120px;
+    height: 65px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+.cube-ico-s{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(185, 185, 185);
+    display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 3px;
+    margin-right: 3px;
+
+
 }
 
-.value-pattern-panel{
-    font-size: 25px;
+.cube-value{
+    width: 100%;
     display: flex;
+    margin-top: 5px;
     align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
-.arrows-up{
-    color: greenyellow;
-    font-size: 20px;
-}
-.arrows-down{
-    color: red;
-    font-size: 20px;
+.cube-comp-months{
+    position: absolute;
+    top: 75%;
+    left: 78%;
+    font-size: 10px;
+
+    color: rgb(20, 214, 20);
 }
