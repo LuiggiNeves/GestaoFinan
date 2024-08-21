@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,7 +18,7 @@
         <div class="Container_Login_Content">
             <form class="form form-content">
                 <p class="title">Login </p>
-                <p class="message">Entre com seu acesso!</p>
+                <p class="message" id="respo">Entre com seu acesso!</p>
                 <label>
                     <input required="" placeholder="" type="email" class="input" id="email">
                     <span>Email</span>
@@ -30,48 +28,54 @@
                     <input required="" placeholder="" type="password" class="input" id="senha">
                     <span>Password</span>
                 </label>
-                <label for="">
-                    <input type="checkbox" name="" id="">
-                    <span>Acesso automatico?</span>
-                </label>
-
+                <div id="respo"></div>
                 <button class="submit" onclick="login()">Submit</button>
 
             </form>
         </div>
 
-        <div id="respo">
-
-        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-
-        function login(){
+        function login() {
             event.preventDefault();
-            var email = document.getElementById('email').value
-            var senha = document.getElementById('senha').value
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
 
-            const data = {email: email, senha:senha}
+            const data = {
+                email: email,
+                senha: senha
+            };
 
-            fetch(`app/controller/httpAcess/validation.php?email=${encodeURIComponent(email)}&senha=${encodeURIComponent(senha)}`, {
-                method: 'POST',
-                headers:{
-                    'Content-Type' : 'application/json'
-                },
-
-                body: JSON.stringify(data)
-            })
-
-            .then(response => resoponse.json())
-            .then(data => {
-                document.getElementById('respo').innerText = data.message;
-            })
-            .catch(error => console.error('Error', error))
-            
+            fetch('app/controller/httpAcess/validation.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Se o login for bem-sucedido, redireciona para a página home.php
+                        window.location.href = "app/view/home.php";
+                    } else {
+                        // Se o login falhar, exibe a mensagem de erro
+                        document.getElementById('respo').innerText = data.message;
+                        document.getElementById('respo').style.color = "red"; // Exibe o texto em vermelho
+                    }
+                })
+                .catch(error => {
+                    // Exibe uma mensagem de erro geral caso a requisição falhe
+                    console.error('Error:', error);
+                    document.getElementById('respo').innerText = "Ocorreu um erro ao tentar realizar o login.";
+                    document.getElementById('respo').style.color = "red"; // Exibe o texto em vermelho
+                });
         }
+
+
 
         function checkStatus() {
             var xhr = new XMLHttpRequest();
